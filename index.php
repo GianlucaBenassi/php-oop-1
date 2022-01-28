@@ -10,6 +10,35 @@
         new Movie("Don't Look Up","Adam McKay",2021,145,8.50)
     ];
 
-    var_dump($movies);
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Movie list</h1>
+
+    <div class="row">
+
+        <?php foreach($movies as $movie) {?>
+            <div class="card">
+                <h2><?php echo $movie->getTitle() ?></h2>
+                <h3>Direttore: <?php echo $movie->getDirector() ?></h3>
+                <span>Anno: <?php echo $movie->getYear() ?></span>
+                <span>Durata: <?php echo $movie->getDuration() ?></span>
+                <span>Prezzo: <?php echo $movie->getPrice() ?>&euro;</span>
+                <span>Prezzo scontato per minori di 14: <?php echo $movie->getDiscount() ?>&euro;</span>
+            </div>
+        <?php } ?>
+
+    </div>
+
+
+</body>
+</html>
