@@ -19,24 +19,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     
     <h1>Movie list</h1>
 
-    <div class="row">
-
-        <?php foreach($movies as $movie) {?>
-            <div class="card">
-                <h2><?php echo $movie->getTitle() ?></h2>
-                <h3>Direttore: <?php echo $movie->getDirector() ?></h3>
-                <span>Anno: <?php echo $movie->getYear() ?></span>
-                <span>Durata: <?php echo $movie->getDuration() ?></span>
-                <span>Prezzo: <?php echo $movie->getPrice() ?>&euro;</span>
-                <span>Prezzo scontato per minori di 14: <?php echo $movie->getDiscount() ?>&euro;</span>
-            </div>
-        <?php } ?>
-
+    <div class="container">
+        <div class="row">
+            
+            <?php foreach($movies as $movie) {?>
+                <div class="card">
+                    <h2><?php echo $movie->getTitle() ?></h2>
+                    <h3>Direttore: <?php echo $movie->getDirector() ?></h3>
+                    <span><strong>Anno:</strong> <?php echo $movie->getYear() ?></span>
+                    <span><strong>Durata:</strong> <?php echo $movie->getDuration() ?></span>
+                    <span><strong>Prezzo:</strong> <?php echo $movie->getPrice() ?>&euro;</span>
+                    <span><strong>Prezzo scontato per minori di 14:</strong> <?php echo $movie->getDiscount() ?>&euro;</span>
+                </div>
+                <?php } ?>
+                
+        </div>
     </div>
 
 
